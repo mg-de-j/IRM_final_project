@@ -1,7 +1,7 @@
 # Analysis of word order and case variation in Beowulf translations
 
 ## General information
-This project investigates the evolution of English syntax through the lens of *Beowulf* translations. Specifically, it quantifies how translation practices have shifted regarding sentence structure and the preservation of historical linguistic features. The study aims to determine if modern translations have discarded archaic sentence structures (non-SVO) to appeal to modern readers, potentially altering the "text" and historical preservation.
+This project investigates the evolution of English syntax by looking at *Beowulf* translations. Specifically, it quantifies how translation practices have shifted regarding sentence structure and the preservation of historical linguistic features. The study aims to determine if modern translations have discarded archaic sentence structures (non-SVO) to appeal to modern readers, potentially altering the "text" and historical preservation.
 
 ## Background information
 
@@ -11,19 +11,19 @@ This project investigates the evolution of English syntax through the lens of *B
 Ho do word order and the use of cases vary between translations of *Beowulf* published pre-1900 and post-1900?
 
 **Hypothesis:** 
-Translations published pre-1900 will feature a significantly higher relative frequency of non-SVO word order and case usage compared to translations published post-1900, which are expected to adhere more strictly to modern English syntax
+Translations published pre-1900 will feature a significantly higher relative frequency of non-SVO word order and case usage compared to translations published post-1900, which are expected to follow modern English syntax more strictly.
 
 ## Method
 
 ### Dataset
-The analysis focuses more on verse translation of *Beowulf* to ensure stylistic comparability, as prose would differ too much
-**Pre-1900:** Morris (1895)
-**Post-1900:** Gummere (1910)
+The analysis focuses on verse translation of *Beowulf* to ensure comparability, as prose would differ too much
+- **Pre-1900:** Morris (1895)
+- **Post-1900:** Gummere (1910)
 
 ### Variables & Sampling
-**Independent Variable:** Publication Era (Pre-1900 vs. Post-1900)
-**Dependent Variable 1:** Relative frequency of word order patterns (Percentage of total clauses that are SVO vs. non-SVO)
-**Dependent Variable 2:** Relative frequency of case markings (Number of archaic case endings per 1,000 words)
+- **Independent Variable:** Publication Era (Pre-1900 vs. Post-1900)
+- **Dependent Variable 1:** Relative frequency of word order patterns (Percentage of total clauses that are SVO vs. non-SVO)
+- **Dependent Variable 2:** Relative frequency of case markings (Number of archaic case endings per 1,000 words)
 
 # Goal: Preparing the GitHub repository for your project
 
