@@ -5,6 +5,10 @@ This project investigates the evolution of English syntax by looking at *Beowulf
 
 ## Background information
 
+Niles, John D. 1993. “Rewriting Beowulf: The Task of Translation.” College English 55 (8): 858–78. https://doi.org/10.58680/ce19939263.
+
+Martín Arista, Javier, Ana Elvira Ojanguren López, and Sara Domínguez Barragán. 2025. “Parsing Old English with Universal Dependencies—The Impacts of Model Architectures and Dataset Sizes.” Big Data and Cognitive Computing 9 (8): 199. https://doi.org/10.3390/bdcc9080199.
+
 ## Research question & Hypotheses
 
 **Research question:**
