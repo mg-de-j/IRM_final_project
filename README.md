@@ -18,7 +18,7 @@ To ensure comparability, a parallel sample of "The Watchman’s Challenge" was e
 *   Gummere: lines 229-300
 
 ## Methodology
-The texts were manually segmented into sentences to address boundary detection issues common in historical texts. The study utilizes Universal Dependencies to measure "parseability" as a metric for modernity, based on findings by **Martín Arista et al. (2025)** that neural parsers achieve lower accuracy on Old English compared to Modern English.
+The texts were segmented into sentences to address boundary detection issues common in historical texts. The study utilizes Universal Dependencies to measure "parseability" as a metric for modernity, based on findings by **Martín Arista et al. (2025)** that neural parsers achieve lower accuracy on Old English compared to Modern English.
 
 ### Variables
 *   **Independent Variable:** Translation Era (Pre-1900 vs. Post-1900)
