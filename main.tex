@@ -11,14 +11,15 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{amsmath}
+\usepackage{hyperref}
 \aclfinalcopy 
 
 \usepackage[authoryear]{natbib}
 \usepackage{url}
 
-\title{Analysis of word order and case variation in Beowulf translations}
-\author{Marten de Jong s4557182\\
-Length: 3-4 pages}
+\title{From Foreignization to Domestication: Quantifying Syntactic Shift in Beowulf Translations}
+\author{Marten de Jong\\
+s4557182}
 \date{}
 
 \begin{document}
@@ -26,102 +27,124 @@ Length: 3-4 pages}
 
 %%% YOUR PART HERE
 \begin{abstract}
-\textcolor{red}{Your abstract here (max 10-15 lines).}
+This study aims to show the shift from a synthetic language to an analytic language using Beowulf translations. Comparing translations of William Morris (1895) and Francis Gummere (1909) we analyse SVO frequency, dependency parsing accuracy and pronominal usage in "The watchman's challenge". We hypothesize Morris will exhibit low parseability and non-SVO structures, matching Old English. On the other hand, Gummere is predicted to show higher SVO frequency and parseability, prioritizing readability for more modern readers. These metrics validate the transition in translation strategy from "foreignization" to "domestication". 
 \end{abstract}
-
-%% IMPORTANT: KEEP ALL SECTIONS (headers)
-%% remove the 'red' text parts
 
 \section{Introduction}
 
-\textcolor{red}{
-\begin{itemize}
-\item This template is based on the template of previous iterations of the course.
-\item Introduce your research (context)
-\item Problem statement and research question, including concrete hypothesis
-\end{itemize}
-} 
+As English changed throughout the years, it evolved from a synthetic to an analytic language, where it originally relied on fixed SVO word order it later needed a fixed word order. This resulted in the replacement of inflectional morphology as the primary determinant of grammatical relations by an SVO word order \citep{west_notes_1973}. By the 15th century, non-SVO patterns had largely disappeared from standard prose \citep{ingham_negation_2000}. This shift poses challenges for translators translating pieces from a foreign source into a domesticated version. Also for translators of \textit{Beowulf}, an Old English poem characterized by the "ornate language" of heroic poetry \citep{niles_rewriting_1993}. We speak of "foreignization" when translators choose to preserve archaic structures, staying true to the original source, and "domestication" when they modernize the syntax to align more with the modern reader. \cite{niles_rewriting_1993} states that translators have to oscillate between these two poles, fidelity and vigor, constantly.
+
+Translations of Beowulf, due its long history, vary a lot in their approach. Modern translations often prioritize aligning more with the modern reader to improve accessibility. Seamus Heaney (1999) famously sought a "directness of utterance". As \cite{chickering_beowulf_2002} notes, Heaney described his translation as "about one-third Heaney, two thirds 'duty to the text'", showing a willingness to balance philological fidelity with the creation of an independent work.
+
+19th century translators like William Morris (1895) favoured foreignization, employing obscure vocabulary and inverted syntax often deemed unreadable \citep{niles_rewriting_1993}. \cite{gummere_translation_1886} sought a middle ground, maintaining alliterative meter while aiming for greater narrative flow \citep{crane_thwack_1970}.
+
+This study investigates how word order (SVO frequency) and case usage vary between these pre-1900 and post-1900 translations. We hypothesize that Morris will feature a significantly higher frequency of non-SVO order and archaic case usage compared to Gummere, who is expected to "domesticate" while retaining inversions needed to keep the alliterative meter intact. 
 
 \section{Related Work}
 
-\textcolor{red}{Use peer-reviewed sources relevant to your own project, discuss them in relation to your own work and cite properly. If you find additional papers, discuss them (optional).}
+\subsection{Syntactic shift in English}
+The transition from Old English to Modern English represents a big shift in syntactic typology. \cite{west_notes_1973} demonstrates that Old English, a synthetic language, relied on a rich system of inflectional morphology to determine grammatical relations. This allowed for a lot of flexibility in word order, with Object-Verb (OV) constructions being common, particularly in subordinate clauses. 
 
-\textcolor{red}{You can cite a paper by using BibTeX like this~\citep{Culotta:ea:2014}, or the following way if the paper is part of the sentence like~\cite{Culotta:ea:2014}, where the BiBTeX entry is in the \texttt{mybib.bib} file. The proper use of \LaTeX{} and citation using BiBteX is part of this assignment.} 
+As English started to lose the inflectional system, nouns and pronouns having distinct case endings, it started to use a word order that was more predictable. Without a fixed SVO order, sentences would become too ambiguous. \cite{ingham_negation_2000} notes that while residual non-SVO patterns, such as negated clauses persisted in specific contexts into the 15th century. The dominant trend was an irreversible move toward the analytic structure of Modern English.
+
+\subsection{The translation history of Beowulf}
+Translating \textit{Beowulf} involves choosing between an archaic, flexible source syntax and the rigid requirements of the target language. \cite{niles_rewriting_1993} argues that "the task of translation" has historically moved between the two poles: "fully idiomatic current English" and "archaic words". We deem the first to be "domestication" and the latter to be "foreignization".
+
+
+The late 19th-century approach by William Morris, heavily favoured foreignization. \cite{crane_thwack_1970} categorized Morris's work as part of a "literalist" tradition that sought to replicate the strangeness of the original. To achieve this, Morris employed a "word-for-word" translation strategy that retained archaic vocabulary and forced Modern English into Germanic word orders (e.g. OVS). \cite{niles_rewriting_1993} suggests that while this approach honours the the philological distance of the poem, it often results in a text that is "nearly unreadable" to a non-specialist audience. 
+
+In contrast, the early 20th century work of Francis Gummere showed a move towards full modernization. \cite{gummere_translation_1886} argued explicitly against the use of modern blank verse, advocating instead for the preservation of the "original Anglo-Saxon meter" and its "metrical peculiarities". While \cite{crane_thwack_1970} evaluates Gummere as a "conscientious" middle ground compared to Morris, Gummere's commitment to the alliterative meter often required syntactic inversions that violate standard modern SVO syntax. Gummere can therefore not be seen as fully domesticated, but as a translator trying to balance metrical fidelity with narrative flow. 
+
+\subsection{Automated Syntactic Analysis and Stylometry}
+
+Researches increasingly use NLP techniques to quantify linguistic shifts in historical texts. \cite{martin_arista_parsing_2025} found that neural parsers achieve lower accuracy (LAS 74.23\%) on Old English compared to Modern English ($\sim$95\%) due to flexible word order and non-projective dependencies. This performance gap suggests that "parseability" can serve as a metric for modernity. Translations trying to mimic archaic syntax will yield lower accuracy scores.
+
+Parallel to automatic parsing is the field of computational stylometry, which focuses on the statistical frequency of linguistic features to identify stylistic signatures. \cite{yao_missing_2025} demonstrate that quantitative metrics, such as distribution of function words and sentence length, can effectively distinguish between different translation agents (e.g., human and AI). In the context of \textit{Beowulf}, counting specific pronominal case forms (e.g., the ratio of thou/thee to you) functions as a similar stylometric marker. By treating these archaic pronouns as countable features, one can objectively measure the degree of "foreignization" in a translation. Quantifying what \cite{niles_rewriting_1993} describes qualitatively as the translator's "bias" or "spin"
+
+
 
 \section{Data}
 
-\textcolor{red}{Describe the data you will use in your research. Describe the data collection, the way you obtained the part of the data you would work with (precisely describe how you will obtain the data for your independent and dependent variables). You can provide a table with examples to give the reader an idea of the dataset you are using. For example, ``We will construct ..."\footnote{\textcolor{red}{[Note: use `we' rather than `I', even though you are the only author (this work is individually done!) - this is common practice in many fields]}}}
+The dataset consists of two translations of \textit{Beowulf}, both available at Project Gutenberg:
 
-\textcolor{red}{Describe how you would obtain data for your variables. If it relies on an automatic way to inferring the variable (e.g., for gender) describe precisely how you would do it. Mention also possible limitations of the way you would obtain the data.}
+\begin{itemize}
+    \item pre-1900 text by William Morris and A.J. Wyatt (1895)
+    \item post-1900 text by Francis B. Gummere (1909)
+\end{itemize}
 
-\paragraph{Pre-processing} \textcolor{red}{Describe how you would pre-process the data. Describe all design choices (e.g., would you tokenize the data? how would you handle retweets?).}
+To ensure comparability, a parallel sample of the "watchman's challenge" was extracted:
 
-Table~\ref{tbl:stats} provides a summary of the data that will be used in this study. 
-\begin{table}[hbtp]\centering
-\begin{tabular}{|cc|}
-\hline
-A & B \\
-\hline
-A & B \\
-A & B \\
-\hline
-\end{tabular}
-\caption{Overview of the data set. Provide an appropriate caption.}
-\label{tbl:stats}
-\end{table}
+\begin{itemize}
+    \item Morris 230-300
+    \item Gummere lines 229-300
+\end{itemize}
 
+\paragraph{Variables}
 
-\section{Predicted Results}
-
-\textcolor{red}{In this section you will describe your expected results based on the literature you found.}
-
-Table~\ref{tbl:results} summarizes...
-
+We assess the shift from archaic to modern syntax using one independent variable (translation era) and two dependent variables representing syntactic and lexical modernization. Table ~\ref{tbl:stats} provides a summary of the data that will be used in this study.
 
 \begin{table}[hbtp]\centering
 \begin{tabular}{|ccc|}
 \hline
-A & B & C\\
+Independent & dependent & dependent \\
 \hline
-A & B & C\\
-A & B & C\\
+pre-1900 & LAS score & ratio archaic to modern\\
+post-1900 & LAS score &  ratio archaic to modern\\
 \hline
 \end{tabular}
-\caption{Add a caption}
+\caption{Overview of the variables that will be measured.}
+\label{tbl:stats}
+\end{table}
+
+\paragraph{Pre-processing}
+
+The raw text files were cleaned to remove Project Gutenberg metadata. To ensure the dependency parser functions optimally, the texts were manually segmented into sentences prior to processing. This to address the sentence boundary detection issues common in historical text, as noted by \cite{martin_arista_parsing_2025}.
+
+To ensure reproducibility of the preprocessing steps and statistical analysis, the full code and datasets used in this study are available at: \href{https://www.github.com/mg-de-j/IRM_final_project}{Beowulf Syntactic Shift}"
+
+\subsection{Dependency Parsing}
+
+To quantify the syntactic "foreignization" of the translations, this study adopts the metric of parseability, defined here as the Labelled Attachment Score (LAS) achieved by a standard Modern English dependency parser. This approach uses the findings of \cite{martin_arista_parsing_2025}, who established that the flexible word order and non-projective dependencies of Old English significantly degrade the performance of neural parsers.
+
+The parsing pipeline was implemented using the spaCy NLP library. We utilized a transformer-based pipeline (en\_core\_web\_trf), which offers the highest accuracy for Modern English. For the specific text samples extracted (lines 230–300 for Morris and 229–300 for Gummere), a Gold Standard corpus was created by manually correcting the parser's output to reflect the intended syntactic relations of the translators. The final LAS was calculated by evaluating the raw model predictions against the manually annotated ground truth.
+
+\section{Predicted Results}
+
+We predict significant quantitative differences in the syntactic profiles of the Morris and Gummere translations.  A summary is shown in Table~\ref{tbl:results}
+
+\begin{table}[hbtp]\centering
+\begin{tabular}{|ccc|}
+\hline
+Feature & Pre-1900 & Post-1900 \\
+\hline
+LAS score & \textless60\% & 60-80\% \\
+Ratio Pronouns & Archaic & Mixed/Archaic \\
+\hline
+\end{tabular}
+\caption{Predicted results}
 \label{tbl:results}
 \end{table}
 
-
 \paragraph{Discussion} 
 
-\textcolor{red}{This is the part in which you discuss what it would mean to find these results and their implications.}
+The results of this study give a measuring tool with which we can view the oscillation of translation strategies described by \cite{niles_rewriting_1993}. By measuring the Parseability (LAS score) and SVO frequency, we can observe the effects of the translator's "bias" or "spin". 
+
+The hypothesis that Morris (1895) would show a lower LAS score and non-SVO word orders consistent with Old English syntax is in line with the related work. If Morris's translations achieves low accuracy scores that is in alignment with the results of \cite{martin_arista_parsing_2025}'s performance on Old English, this confirms that his syntax follows the "flexible word order" and "non-projective dependencies" of the source language. 
+
+While our hypothesis anticipated a high degree of modernization in Gummere, the predicted results likely show a moderate increase in SVO frequency and LAS rather than a total alignment with modern prose. This reflects the goal identified by \cite{crane_thwack_1970}, where Gummere attempts to maintain the "original metre", a constraint that forces syntactic inversions even when the vocabulary is modernized.
 
 \section{Conclusion}
 
-\textcolor{red}{Wrap up your report by giving answers to your research question in the beginning. For example, ``This study aimed at ..." You might mention limitations of the current study, or directions for further research here.}
+This study used syntactic dependency parsing and stylometric analysis to measure the shift from "foreignization" to "domestication" in \textit{Beowulf} translations. The metrics validate the distinction between Morris (1895), whose low parseability scores align with the archaic, synthetic structure of Old English. Gummere (1909), whose higher SVO frequency reflects a movement toward analytic modern syntax.
 
-%%END YOUR PART
+\subsection{Limitations and Future Research}
 
-\section*{\textcolor{red}{Check list}}
-\textcolor{red}{(in your final paper remove this section)}
-\textcolor{red}{
-\begin{itemize}
-\item Make sure your paper is max 4 pages long (excluding references and appendices)
-\item check that your paper contains an abstract
-\item check that your paper states the research hypothesis
-clearly, and defines independent and dependent variables
-\item make sure your paper discusses at least 3 papers that you found relevant to your own work
-\item check that your paper describes precisely how you would create
-the data set that you base your research on, including all steps in preprocessing the data
-\item make sure your paper links to the github repository
-\item make sure your paper contains a predicted results section, which shows the predicted results of your study and discusses them (table + text).
-\item finally, make sure you have all parts of the report: abstract, introduction, related work, data, predicted results, conclusion
-\item check proper use of \LaTeX{} and BibTex
-\end{itemize}
-}
+A significant limitation of this study was the reliance of texts available in the public domain via Project Gutenberg. This constraint restricted the analysis to translations, whose copyright has ended, preventing a comparison with fully domesticated modern versions such as those by Chickering (1977) or Heaney (1999).
+
+Furthermore, while our hypothesis framed Gummere as a modernizer, future research must keep his own theoretical stance in mind. In his essay on translation (1886), Gummere explicitly argued against modern blank verse and advocated for the preservation of the "original metre" and its "peculiarities". This suggests that any increase in parseability found in Gummere's translation may be incidental rather than a deliberate attempt at domestication. Future research should expand the dataset to include copyright-protected modern translations and incorporate "gold-standard" human baselines, as suggested by \cite{yao_missing_2025}, to better show the impact of the translator's "bias".
 
 \bibliographystyle{chicago}
-\bibliography{mybib.bib}
+\bibliography{references.bib}
 
 \end{document}
 
