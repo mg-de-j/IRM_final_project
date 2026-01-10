@@ -1,48 +1,46 @@
-# Analysis of word order and case variation in Beowulf translations
+# From Foreignization to Domestication: Quantifying Syntactic Shift in Beowulf Translations
 
-## General information
-This project investigates the evolution of English syntax by looking at *Beowulf* translations. Specifically, it quantifies how translation practices have shifted regarding sentence structure and the preservation of historical linguistic features. The study aims to determine if modern translations have discarded archaic sentence structures (non-SVO) to appeal to modern readers, potentially altering the "text" and historical preservation.
+## Project Overview
+This project investigates the evolution of English syntax and translation strategy by analyzing *Beowulf* translations. As English evolved from a synthetic to an analytic language, reliance on fixed SVO word order replaced inflectional morphology. This study quantifies how translation practices have shifted regarding sentence structure and the preservation of historical linguistic features.
 
-## Background information
-
-Niles, John D. 1993. “Rewriting Beowulf: The Task of Translation.” College English 55 (8): 858–78. https://doi.org/10.58680/ce19939263.
-
-Martín Arista, Javier, Ana Elvira Ojanguren López, and Sara Domínguez Barragán. 2025. “Parsing Old English with Universal Dependencies—The Impacts of Model Architectures and Dataset Sizes.” Big Data and Cognitive Computing 9 (8): 199. https://doi.org/10.3390/bdcc9080199.
+Theoretical frameworks by **John D. Niles** suggest that translation oscillates between two poles: "foreignization" (bringing the reader to the text via archaic words) and "domestication" (bringing the text to the reader via fully idiomatic current English). This project uses computational stylometry to measure the translator's "bias" or "spin" regarding these poles.
 
 ## Research question & Hypotheses
 
-**Research question:**
-Ho do word order and the use of cases vary between translations of *Beowulf* published pre-1900 and post-1900?
+## Research Question
+How do word order (SVO frequency) and dependency parsing accuracy (LAS) vary between translations of *Beowulf* published pre-1900 and post-1900?
 
-**Hypothesis:** 
-Translations published pre-1900 will feature a significantly higher relative frequency of non-SVO word order and case usage compared to translations published post-1900, which are expected to follow modern English syntax more strictly.
+## Dataset
+The analysis focuses on two verse translations of *Beowulf* retrieved from Project Gutenberg:
+*   **Pre-1900:** William Morris and A.J. Wyatt (1895)
+*   **Post-1900:** Francis B. Gummere (1909)
 
-## Method
+To ensure comparability, a parallel sample of "The Watchman’s Challenge" was extracted:
+*   Morris: lines 230-300
+*   Gummere: lines 229-300 [4]
 
-### Dataset
-The analysis focuses on verse translation of *Beowulf* to ensure comparability, as prose would differ too much
-- **Pre-1900:** Morris (1895)
-- **Post-1900:** Gummere (1910)
+## Methodology
+The texts were manually segmented into sentences to address boundary detection issues common in historical texts. The study utilizes Universal Dependencies to measure "parseability" as a metric for modernity, based on findings by **Martín Arista et al. (2025)** that neural parsers achieve lower accuracy on Old English compared to Modern English.
 
-### Variables & Sampling
-- **Independent Variable:** Publication Era (Pre-1900 vs. Post-1900)
-- **Dependent Variable 1:** Relative frequency of word order patterns (Percentage of total clauses that are SVO vs. non-SVO)
-- **Dependent Variable 2:** Relative frequency of case markings (Number of archaic case endings per 1,000 words)
+### Variables
+*   **Independent Variable:** Translation Era (Pre-1900 vs. Post-1900)
+*   **Dependent Variable 1:** Parseability (LAS Score).
+*   **Dependent Variable 2:** Pronominal Usage (Ratio of archaic pronouns).
 
-# Goal: Preparing the GitHub repository for your project
+## Hypotheses
+1.  **Morris (1895):** Will exhibit low parseability (LAS scores < 60%) and frequent non-SVO structures. This aligns with the "foreignization" approach, where the syntax attempts to mimic the flexible word order of the source language, often resulting in text deemed "nearly unreadable".
+2.  **Gummere (1909):** Will exhibit higher SVO frequency and parseability (LAS 60-80%). While Gummere argued for preserving the "original Anglo-Saxon meter" and its peculiarities, his work represents a "conscientious" middle ground that moves toward domestication and greater narrative flow compared to Morris.
 
-As part of your final project, you also need to create a GitHub repository. In this milestone assignment, you will prepare your GitHub repository. The instructions are the following:
+## References
 
-    Create a GitHub account and repository. If needed, familiarize yourself with GitHub using slides from Lecture 5.
-    Create a project outline on your GitHub page as the .ReadMe; this outline should include the following subsections:
-        General information, describing your project (i.e., the abstract)
-        Background information (list at least two studies that have looked at your topic, including correct referencing)
-        Research question and hypotheses (revised on the basis of our feedback and the feedback of your peers)
-        Method (including the dataset in use, sampling method etc.)
+*   Chickering, H. (2002). "Beowulf and 'Heaneywulf'". *The Kenyon Review* 24(1), 160–178.
+*   Crane, J. K. (1970). "To Thwack or Be Thwacked: An Evaluation of Available Translations and Editions of Beowulf." *College English* 32(3), 321–340.
+*   Gummere, F. B. (1886). "The Translation of Beowulf, and the Relations of Ancient and Modern English Verse." *The American Journal of Philology* 7(1), 46–78.
+*   Ingham, R. (2000). "Negation and OV Order in Late Middle English." *Journal of Linguistics* 36(1), 13–38.
+*   Martín Arista, J., et al. (2025). "Parsing Old English with Universal Dependencies—The Impacts of Model Architectures and Dataset Sizes." *Big Data and Cognitive Computing* 9(8), 199.
+*   Niles, J. D. (1993). "Rewriting Beowulf: The Task of Translation." *College English* 55(8), 858–878.
+*   West, F. (1973). "Some Notes on Word Order in Old and Middle English." *Modern Philology* 71(1), 48–53.
+*   Yao, X., et al. (2025). "Missing the human touch? A computational stylometry analysis of GPT-4 translations..." *Translation Spaces* 14(2), 303–330.
 
-In order to pass this milestone, you need to complete two tasks.
-
-    Task 1: submit a link to your GitHub page, which should include all the details listed above.
-    Task 2: present your GitHub page during the lab session 6 by uploading it here: https://docs.google.com/presentation/d/1-oRkAJ7jFjpjq7if7wX8u0f0O9vwKQLjCvwYQCMi9VU/edit?usp=sharing
-
-Before submitting your project reports, we expect your GitHub page to be updated, including the relevant .ReadMe file and all code required for reproducibility.
+## Reproducibility
+The full code and preprocessed datasets used in this study are available in this repository.
