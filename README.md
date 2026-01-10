@@ -15,7 +15,7 @@ The analysis focuses on two verse translations of *Beowulf* retrieved from Proje
 
 To ensure comparability, a parallel sample of "The Watchman’s Challenge" was extracted:
 *   Morris: lines 230-300
-*   Gummere: lines 229-300 [4]
+*   Gummere: lines 229-300
 
 ## Methodology
 The texts were manually segmented into sentences to address boundary detection issues common in historical texts. The study utilizes Universal Dependencies to measure "parseability" as a metric for modernity, based on findings by **Martín Arista et al. (2025)** that neural parsers achieve lower accuracy on Old English compared to Modern English.
