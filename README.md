@@ -25,6 +25,20 @@ The texts were segmented into sentences to address boundary detection issues com
 *   **Dependent Variable 1:** Parseability (LAS Score).
 *   **Dependent Variable 2:** Pronominal Usage (Ratio of archaic pronouns).
 
+## Dependency Parsing Pipeline & Evaluation
+To quantify syntactic "foreignization" this project implements a parsing pipeline using the spaCy NLP library.
+
+1. Model Configuration We utilize the en_core_web_trf (Transformer-based) pipeline. This Modern English parser establishes a "domestication baseline".
+
+• Modern English Benchmark: ~95% LAS (typical for transformer models on standard prose).
+
+• Old English Benchmark: 74.23% LAS. This benchmark is derived from Martín Arista et al. (2025), who demonstrated that the flexible word order and non-projective dependencies of Old English significantly degrade neural parser performance (specifically a pretrained tok2vec model).
+
+2. Metric: Labelled Attachment Score (LAS) LAS measures the percentage of tokens where the parser correctly predicts both the syntactic head and the dependency label. To calculate this for the translation samples:
+    1. Inference: The parser was run on the raw text samples to generate initial dependency trees.
+    2. Gold Standard Creation: The parser output was manually corrected to fix errors caused by archaic syntax (e.g., OVS inversion), creating a "Truth" dataset.
+    3. Evaluation: The raw model predictions were compared against the manually annotated Gold Standard to generate the final LAS scores.
+
 ## Hypotheses
 1.  **Morris (1895):** Will exhibit low parseability (LAS scores < 60%) and frequent non-SVO structures. This aligns with the "foreignization" approach, where the syntax attempts to mimic the flexible word order of the source language, often resulting in text deemed "nearly unreadable".
 2.  **Gummere (1909):** Will exhibit higher SVO frequency and parseability (LAS 60-80%). While Gummere argued for preserving the "original Anglo-Saxon meter" and its peculiarities, his work represents a "conscientious" middle ground that moves toward domestication and greater narrative flow compared to Morris.
