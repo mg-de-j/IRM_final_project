@@ -5,8 +5,6 @@ This project investigates the evolution of English syntax and translation strate
 
 Theoretical frameworks by **John D. Niles** suggest that translation oscillates between two poles: "foreignization" (bringing the reader to the text via archaic words) and "domestication" (bringing the text to the reader via fully idiomatic current English). This project uses computational stylometry to measure the translator's "bias" or "spin" regarding these poles.
 
-## Research question & Hypotheses
-
 ## Research Question
 How do word order (SVO frequency) and dependency parsing accuracy (LAS) vary between translations of *Beowulf* published pre-1900 and post-1900?
 
